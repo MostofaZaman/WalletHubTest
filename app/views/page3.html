@@ -1,0 +1,26 @@
+﻿<div flex layout="row" layout-align="center center">
+    <div flex-sm="100" flex-gt-sm="90" flex-gt-md="70" flex-gt-lg="50" class="md-whiteframe-z2">
+        <md-content class="md-padding">
+            <div flex-sm="100" flex-gt-sm="80" layout-sm="column">
+                <form>
+                    <h2 style="text-align:center">Page Three</h2>
+                    <p>8) Create 3 inputs each with maximum char. length 5. When entering the 5th char. in an input the cursor should jump to the next input right after the char. has been inserted. When deleting the 1st char. of an input the cursor should jump at the end of previous input right after that char. has been deleted.</p>
+                    <md-input-container>
+                        <label>First:</label>
+                        <input ng-maxlength="4" id="tabinputOne" tabindex="1" autotab-directive>
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Second:</label>
+                        <input ng-maxlength="4" id="tabinputTwo" tabindex="2" autotab-directive ng-click="getCursorPos($event)" ng-keyup="getCursorPos($event)">
+                    </md-input-container>
+
+                    <md-input-container>
+                        <label>Third:</label>
+                        <input ng-maxlength="4" id="tabinputThree" tabindex="3" autotab-directive ng-click="getCursorPos($event)" ng-keyup="getCursorPos($event)">
+                    </md-input-container>
+
+                </form>
+            </div>
+        </md-content>
+    </div>
+</div>

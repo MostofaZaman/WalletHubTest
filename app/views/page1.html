@@ -1,0 +1,33 @@
+﻿<div flex layout="row" layout-align="center center">
+    <div flex-sm="100" flex-gt-sm="90" flex-gt-md="70" flex-gt-lg="50" class="md-whiteframe-z2">
+        <md-content class="md-padding">
+            <div flex-sm="100" flex-gt-sm="80" layout-sm="column">
+                <form name="contactForm" data-ng-submit="sendMail()">
+                    <h2 style="text-align:center">Page One</h2>
+                    <p>1) Use ui-route to create at least 3 pages that share a single state for loading them. To achieve this, have state url parameters by dynamic and load views/controllers based on those parameters.
+Create a method which can load the controller and template of each page on demand, when route changes. Make the state url option have 2 parameters with the second one optional (this can be done by using regexp on the url parameters) so that one of the pages can load additional information inside another ui-view based on that parameter.</p>
+                    <p>
+2) Provide example on how to pass data between page controllers. Have an input field in one page of which contents is displayed in the second page. Please do not use $rootScope.</p>
+                    <p>3) Have page transition animations.</p>
+
+                    <md-input-container>
+                        <label>Write here to pass data another controller:</label>
+                        <input ng-model="MyData.MyName" required>
+                    </md-input-container>
+                    <p>5) Have a directive that is dependent of ngModel, that restricts the input to numbers only and auto formats the input as a phone number like (541) 754-3010. The field must change its format as user types. Do not create a $filter for this directive as that does not mean the directive itself is doing the format.</p>
+                    <md-input-container flex>
+                        <label>Phone number:</label>
+                        <phonenumber-directive placeholder="myPrompt" model='myModel.phonenumber'></phonenumber-directive>
+                    </md-input-container>
+
+                    <p>6) Have a directive that is dependent of ngModel, that restricts the input to numbers only and auto formats the input into currency, ex: $1,234. The field must change its format as user types. Do not create a $filter for this directive as that does not mean the directive itself is doing the format.</p>
+                    <md-input-container>
+                        <label>Currency:</label>
+                        <currency-directive model='myModel.price' placeholder="hintsText" amount="stake"></currency-directive>
+                    </md-input-container>
+                    
+                </form>
+            </div>
+        </md-content>
+    </div>
+</div>

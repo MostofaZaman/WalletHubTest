@@ -1,0 +1,70 @@
+﻿<div flex layout="row" layout-align="center center">
+    <div flex-sm="100" flex-gt-sm="90" flex-gt-md="70" flex-gt-lg="50" class="md-whiteframe-z2">
+        <md-content class="md-padding">
+            <div flex-sm="100" flex-gt-sm="80" layout-sm="column">
+                <form>
+                    <h2 style="text-align:center">Sort Array Data and Search</h2>
+                    <p>4) Create an array of 50 items, each item having 3 properties. Create an option to sort the array by one or two properties. Make the array be filterable by a search input.</p>
+                    <div class="container">
+                        <div class="alert alert-info">
+                            <p>Sort Type: {{ sortType }}</p>
+                            <p>Sort Reverse: {{ sortReverse }}</p>
+                            <p>Search Query: {{ searchContact }}</p>
+                        </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <!--<div class="input-group-addon"><i class="fa fa-search"></i></div>-->
+                                    <!--<input type="text" class="form-control" placeholder="Search the contact" ng-model="searchContact">-->
+                                    <md-input-container>
+                                        <label>Search:</label>
+                                        <input ng-model="searchContact" placeholder="Search the contact">
+                                    </md-input-container>
+                                </div>
+                            </div>
+
+                        <table class="table table-bordered table-striped">
+
+                            <thead>
+                                <tr>
+                                    <td>
+                                        <a href="javascript:void(0)" ng-click="sortType = 'firstname'; sortReverse = !sortReverse">
+                                            First Name
+                                            <span ng-show="sortType == 'firstname' && !sortReverse" class="fa fa-caret-down"></span>
+                                            <span ng-show="sortType == 'firstname' && sortReverse" class="fa fa-caret-up"></span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0)" ng-click="sortType = 'lastname'; sortReverse = !sortReverse">
+                                            Last Name
+                                            <span ng-show="sortType == 'lastname' && !sortReverse" class="fa fa-caret-down"></span>
+                                            <span ng-show="sortType == 'lastname' && sortReverse" class="fa fa-caret-up"></span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0)" ng-click="sortType = 'contactno'; sortReverse = !sortReverse">
+                                            Contact No
+                                            <span ng-show="sortType == 'contactno' && !sortReverse" class="fa fa-caret-down"></span>
+                                            <span ng-show="sortType == 'contactno' && sortReverse" class="fa fa-caret-up"></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr ng-repeat="contact in contacts | orderBy:sortType:sortReverse | filter:searchContact">
+                                    <td>{{ contact.firstname }}</td>
+                                    <td>{{ contact.lastname }}</td>
+                                    <td>{{ contact.contactno }}</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </form>
+            </div>
+        </md-content>
+    </div>
+</div>

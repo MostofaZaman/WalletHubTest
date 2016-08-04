@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <!--All CSS file-->
+    <link href="/assets/site.css" rel="stylesheet" />
+    <link href="assets/bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css" rel="stylesheet" />
+    <link href="/assets/bower_components/ng-dialog/css/ngDialog.min.css" rel="stylesheet" />
+    <link href="/assets/bower_components/ng-dialog/css/ngDialog-custom-width.css" rel="stylesheet" />
+    <link href="/assets/bower_components/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet" />
+    <link href="/assets/bower_components/ng-dialog/css/ngDialog-theme-plain.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="/assets/bower_components/angular-material/angular-material.min.css" rel="stylesheet" />
+
+    <!--RequireJs for app resource load-->
+    <script data-main="app/main" src="/assets/bower_components/requirejs/require.js"></script>
+</head>
+<body>
+    <md-toolbar class="md-primary">
+        <div class="md-toolbar-tools">
+
+            <h2><i class="material-icons">assignment</i>WalletHub AngularJs Assignment App</h2>
+
+        </div>
+    </md-toolbar>
+    <div layout="row">
+        <div layout="column">
+            
+            <md-sidenav class="md-sidenav-left"
+                        md-component-id="left"
+                        md-is-locked-open="$mdMedia('gt-md')"
+                        md-disable-backdrop
+                        md-whiteframe="4">
+                <md-toolbar class="md-theme-indigo">
+                    <h1 class="md-toolbar-tools">Menu</h1>
+                </md-toolbar>
+                <md-content layout-padding>
+                    <md-list-item class="secondary-button-padding">
+                        <md-button class="md-primary" ui-sref="home({pageno:0})">
+                            <i class="material-icons">home</i> Home
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item class="secondary-button-padding">
+                        <md-button class="md-primary" ui-sref="home({pageno:1})">
+                            <i class="material-icons">touch_app</i> Page One
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item class="secondary-button-padding">
+                        <md-button class="md-primary" ui-sref="home({pageno:2})">
+                            <i class="material-icons">touch_app</i> Page Two
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item class="secondary-button-padding">
+                        <md-button class="md-primary" ui-sref="home({pageno:3})">
+                            <i class="material-icons">touch_app</i> Page Three
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item class="secondary-button-padding">
+                        <md-button class="md-primary" ui-sref="home({pageno:4})">
+                            <i class="material-icons">touch_app</i> Problem Number 4
+                        </md-button>
+                    </md-list-item>
+                </md-content>
+            </md-sidenav>
+        </div>
+        <div layout="column" layout-fill ng-cloak>
+            <md-content class="md-padding">
+                <h2>Dashboard</h2>
+                <div class="anim-in-out anim-slide-below" data-anim-speed="1000" ui-view=""> </div>
+                <br />
+                <div class="anim-in-out anim-slide-below-fade" data-anim-speed="1000" ui-view="pageOne"> </div>
+                <br />
+                <div class="anim-in-out anim-slide-below-fade" data-anim-speed="1000" ui-view="pageTwo"> </div>
+                <br />
+                <div class="anim-in-out anim-slide-below-fade" data-anim-speed="1000" ui-view="pageThree"> </div>
+                <div class="anim-in-out anim-slide-below-fade" data-anim-speed="1000" ui-view="arraySort"> </div>
+            </md-content>
+        </div>
+    </div>
+</body>
+</html>
