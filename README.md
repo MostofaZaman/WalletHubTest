@@ -32,7 +32,7 @@ Note: All this functionality also recorded .gif file in RecordedDemo Folder. Usi
 
 - You can use visual studio 2015/any other editor
 
-- Run application as start by default route. http://localhost:46984/#/page/1
+- Run application as start by default route. http://localhost:46984/#/page/0
 
 - After run application open browser and put url as http://localhost:46984/#/page/0
 
